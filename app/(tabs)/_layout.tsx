@@ -19,7 +19,7 @@ const TabIcon = ({focused, icon, title}: any) => {
   else {
     return (
       <View className="size-full justify-center items-center mt-4 rounded-full">
-        <Image source={icon} className="size-5" tintColor="A8B5DB"/>
+        <Image source={icon} tintColor="A8B5DB" className="size-5"/>
       </View>
     )
   }
@@ -37,7 +37,7 @@ const _layout = () => {
           alignItems: 'center',
         },
         tabBarStyle: {
-          backgroundColor: '#0f0d23',
+          backgroundColor: '#0F0D23',
           borderRadius: 50,
           marginHorizontal: 20,
           marginBottom: 36,
@@ -45,18 +45,21 @@ const _layout = () => {
           position: 'absolute',
           overflow: 'hidden',
           borderWidth: 1,
-          borderColor: '#0f0d23'
+          borderColor: '#0F0D23'
         }
       }}
     >
 
       <Tabs.Screen
-      name="index" 
-      options={{headerShown: false, title: 'Home', 
-        tabBarIcon: ({ focused }) => (
-        <TabIcon focused={focused} icon={icons.home} title="Home"/>
-      )
-      }} />
+        name="index"
+        options={{
+          title: "index",
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon focused={focused} icon={icons.home} title="Home" />
+          ),
+        }}
+      />
 
       <Tabs.Screen
         name="search"
